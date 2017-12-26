@@ -126,19 +126,19 @@ This script is written in AutoHotkey (AHK) and has been maintained since Sep 21,
 <td>previous word</td>
 </tr>
 <tr>
-<td>win-c</td>
+<td>Win-c</td>
 <td>copy</td>
 </tr>
 <tr>
-<td>win-v</td>
+<td>Win-v</td>
 <td>paste</td>
 </tr>
 <tr>
-<td>win-x</td>
+<td>Win-x</td>
 <td>cut</td>
 </tr>
 <tr>
-<td>win-z</td>
+<td>Win-z</td>
 <td>undo</td>
 </tr>
 </table>
