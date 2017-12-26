@@ -35,8 +35,8 @@ is_target()
 ;     Return 1
 ;   IfWinActive,ahk_class SunAwtFrame
 ;     Return 1
-;   IfWinActive,ahk_class Emacs ; NTEmacs
-;     Return 1  
+    IfWinActive,ahk_class Emacs ; NTEmacs
+      Return 1  
 ;   IfWinActive,ahk_class XEmacs ; XEmacs on Cygwin
 ;     Return 1
   Return 0
@@ -402,4 +402,66 @@ scroll_down()
   Else
     scroll_up()
   Return
+
+;following section remaps alt-delete keys to mimic OSX
+;command-delete deletes whole line
+^BS::Send {LShift down}{Home}{LShift Up}{Del}
+
+;alt-function-delete deletes next word
+!Delete::Send {LShift down}{LCtrl down}{Right}{Lctrl up}{LShift Up}{Del}
+!d::Send {LShift down}{LCtrl down}{Right}{Lctrl up}{LShift Up}{Del}
+
+;move to next word
+!f::Send {LCtrl down}{Right}{Lctrl up}
+
+;alt-delete deletes previous word
+!BS::Send {LShift down}{LCtrl down}{Left}{Lctrl up}{LShift Up}{Del}
+
+;move to previous word
+!b::Send {LCtrl down}{Left}{Lctrl up}
+
+;following section mimics command-q and command-w
+;behaviour to close windows
+^SC011::^F4 ;w
+^SC010::Send {LAlt down}{Ctrl up}{F4}{LAlt up} ;q
+; Ctrl+H (cmd+h) to hide window
+^SC023::WinMinimize,a ;h
+
+
+;following section remaps alt-arrow and command-arrow
+;keys to mimic OSX behaviour
+^Up::Send {Lctrl down}{Home}{Lctrl up}
+^Down::Send {Lctrl down}{End}{Lctrl up}
+^Left::Send {Home}
+^Right::Send {End}
+^+Up::Send {Shift down}{Lctrl down}{Home}{Lctrl up}{Shift up}
+^+Down::Send {Shift down}{Lctrl down}{End}{Lctrl up}{Shift up}
+^+Left::Send {Shift down}{Home}{Shift up}
+^+Right::Send {Shift down}{End}{Shift up} 
+
+; Disable start menu on left winkey
+LWin & vk07::return
+LWin::return ; (or run Launchy)
+
+;select all using win+a
+LWin & a::Send {Lctrl down}{Home}{Shift down}{End}{Lctrl up}{Shift up}
+RWin & a::Send {Lctrl down}{Home}{Shift down}{End}{Lctrl up}{Shift up}
+
+;copy and paste using win+c win+v win+x
+LWin & c::Send {Lctrl down}{c}{Lctrl up}
+RWin & c::Send {Lctrl down}{c}{Lctrl up}
+
+LWin & x::Send {Lctrl down}{x}{Lctrl up}
+RWin & x::Send {Lctrl down}{x}{Lctrl up}
+
+LWin & v::Send {Lctrl down}{v}{Lctrl up}
+RWin & v::Send {Lctrl down}{v}{Lctrl up}
+
+;undo using win+z
+LWin & z::Send {Lctrl down}{z}{Lctrl up}
+RWin & z::Send {Lctrl down}{z}{Lctrl up}
+
+;find using win+f
+LWin & f::Send {Lctrl down}{f}{Lctrl up}
+RWin & f::Send {Lctrl down}{f}{Lctrl up}
 
