@@ -117,6 +117,30 @@ This script is written in AutoHotkey (AHK) and has been maintained since Sep 21,
 <td>M-v</td>
 <td>scroll-up</td>
 </tr>
+<tr>
+<td>M-f</td>
+<td>next word</td>
+</tr>
+<tr>
+<td>M-b</td>
+<td>previous word</td>
+</tr>
+<tr>
+<td>win-c</td>
+<td>copy</td>
+</tr>
+<tr>
+<td>win-v</td>
+<td>paste</td>
+</tr>
+<tr>
+<td>win-x</td>
+<td>cut</td>
+</tr>
+<tr>
+<td>win-z</td>
+<td>undo</td>
+</tr>
 </table>
 
 
